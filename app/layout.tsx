@@ -1,3 +1,4 @@
+import React, { ReactNode } from 'react';
 import Nav from "@components/Nav";
 import Provider from "@components/Provider";
 import "@styles/global.css";
@@ -7,11 +8,15 @@ export const metadata = {
   description: "Discaver & Shear AI Prompts",
 };
 
-export default function RootLayout({ children }) {
+
+interface RootLayoutProps {
+  children: ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body>
-        <Provider>
           <div className="main">
             <div className="gradient" />
           </div>
@@ -19,7 +24,6 @@ export default function RootLayout({ children }) {
             <Nav />
             {children}
           </main>
-        </Provider>
       </body>
     </html>
   );

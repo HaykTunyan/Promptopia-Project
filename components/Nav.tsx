@@ -12,15 +12,15 @@ export default function Nav() {
 
   const isLogindIn: boolean = true;
 
-  const [providers, setProviders] = useState(null);
+  const [providers, setProviders] = useState<any>(null);
 
   useEffect(() => {
-    const setProviders = async () => {
-      const response = await setProviders();
+    const fetchProviders = async () => {
+      const response:any = await fetchProviders();
       setProviders(response);
     };
 
-    setProviders();
+    fetchProviders();
   }, []);
 
   return (
@@ -42,7 +42,7 @@ export default function Nav() {
             <Link href={"create-prompt"} className="black_btn">
               Create Post
             </Link>
-            <button type="button" onClick={signOut} className="outline_btn">
+            <button type="button" onClick={() => signOut()} className="outline_btn">
               Sign Out
             </button>
             <Link href={"profile"} className="">
@@ -58,11 +58,11 @@ export default function Nav() {
         ) : (
           <div className="">
             {providers &&
-              Object.values(providers).map((provider) => (
+              Object.values(providers).map((item:any, index) => (
                 <button
-                  type="button"
-                  key={provider.name}
-                  onClick={() => signIn(provider.id)}
+                  type="button"     
+                  key={item.name}
+                  onClick={() => signIn(item.id)}
                   className="black_btn"
                 >
                   Sign In
