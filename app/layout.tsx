@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import Nav from "@components/Nav";
+import Nav from "../components/Nav";
 import Provider from "@components/Provider";
 import "@styles/global.css";
 
