@@ -6,6 +6,10 @@ import { useSearchParams } from "next/navigation";
 import Profile from "@components/Profile";
 
 const UserProfile = ({ params }) => {
+  /**
+   * Hooks.
+   */
+
   const searchParams = useSearchParams();
   const userName = searchParams.get("name");
 

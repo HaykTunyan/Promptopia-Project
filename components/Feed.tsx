@@ -26,6 +26,10 @@ const PromptCardList = ({
 };
 
 const Feed = () => {
+  /**
+   * Hooks.
+   */
+
   const [allPosts, setAllPosts] = useState([]);
 
   // Search states
@@ -71,7 +75,7 @@ const Feed = () => {
     );
   };
 
-  const handleTagClick = (tagName :any ): void => {
+  const handleTagClick = (tagName: any) : void => {
     setSearchText(tagName);
 
     const searchResult = filterPrompts(tagName);

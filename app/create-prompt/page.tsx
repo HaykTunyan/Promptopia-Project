@@ -7,6 +7,10 @@ import { useRouter } from "next/navigation";
 import Form from "@components/Form";
 
 const CreatePrompt = () => {
+  /**
+   * Hooks.
+   */
+
   const router = useRouter();
   const { data: session } = useSession();
 
@@ -39,7 +43,7 @@ const CreatePrompt = () => {
 
   return (
     <Form
-      type='Create'
+      type="Create"
       post={post}
       setPost={setPost}
       submitting={submitting}
